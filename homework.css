@@ -1,0 +1,399 @@
+/*
+*{
+    outline: dotted red;
+}*/
+
+body{
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #310D20;
+    color: white;
+}
+
+#header{
+    background-image: url("images/header.jpg");
+    height: 60vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 0;
+    position: relative;
+    border-bottom: solid #E0FBFC .15em;
+}
+
+
+#header .overlay {
+    flex-direction: column;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    width: 100%;
+    gap: 9em;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .35);
+}
+
+#mainName{
+    text-decoration: overline;
+    font-style: italic;
+    font-size: xxx-large;
+    color: #E0FBFC;
+}
+
+#navbar{
+        margin-top: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100vw;
+}
+
+#navbar a{
+    border: solid .1em #E0FBFC;
+    text-decoration: none;
+    font-size: 1.3em;
+    padding: 0.5em;
+    color: #E0FBFC;
+}
+
+#navbar a:hover {
+    transition: 200ms;
+    background-color: #310D20;
+}
+
+.searchbar{
+    display: flex;
+}
+
+.searchbar input[ type=text]{
+    border: solid .1em #E0FBFC;
+    border-right: none;
+    padding: 0.3em;
+    border-radius: 1em 0 0 1em;
+    font-weight: bolder;
+    width: 30vw;
+}
+
+.searchbar button{
+    border: solid .1em #E0FBFC;
+    border-left: none;
+    padding: 0.3em;
+    border-radius: 0 1em 1em 0;
+}
+
+.searchbar button:hover{
+    cursor: pointer;
+    opacity: .4;
+    transition: 200ms;
+}
+
+.searchbar input[ type=text]:focus{
+    transition: 100ms;
+    border-bottom: solid .15em #310D20;
+}
+
+#login_flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    min-height: 80vh;
+}
+
+#login_flex img {
+    width: 10em;
+    margin-left: 10em;
+}
+
+.data a{
+    text-decoration: none;
+    font-size: small;
+    color: white;
+    margin-top: 5%;
+    text-align: right;
+}
+
+.data a:hover{
+    color: #F5D491;
+}
+
+.data {
+    display: flex;
+    position: relative;
+    border: solid #E0FBFC 3px;
+    flex-direction: column;
+    color: white;
+    background-color: #182825;
+    justify-content: space-around;
+    max-width: 80%;
+    text-align: left;
+    padding: 1em;
+}
+
+.data label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.data p {
+    margin: 0.3em;
+}
+
+.data input {
+    margin-left: 0.5em;
+}
+
+.data input:hover{
+    opacity: .8;
+}
+
+.footer {
+    background-color: #182825;
+    color: #E0FBFC;
+    text-align: center;
+    padding: 2em 0;
+    border-top: solid #E0FBFC .1em;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    font-weight: bolder;
+    margin-top: 1.5em;
+}
+
+.footer div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.logout:hover{
+    cursor: pointer;
+}
+
+#uniLogo{
+    width: 10em;
+    filter:invert(85%);
+    height: 5em;
+}
+.footer img{
+    width: 1.5em;
+    margin-left: 1em;
+}
+
+.footer a{
+    text-decoration: none;
+}
+
+.footer a:visited{
+    color: inherit;
+}
+.footer a:hover{
+    color: peachpuff;
+}
+.footer #mainName{
+    font-size: medium;
+}
+
+.content{
+    min-height: 80vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content p{
+    background-color: #182825;
+    border: #E0FBFC solid 3px;
+    padding: .5em;
+}
+
+#container{
+    flex-wrap: wrap;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+
+#container div{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    margin: .5em auto .5em auto;
+    border: .15em solid #E0FBFC;
+    background-color: black;
+    font-size: 1em;
+    position: relative;
+}
+
+#container div:hover{
+    opacity: .5;
+    cursor: pointer;
+}
+
+#container img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#container div h3{
+    position: absolute;
+    width: 100%;
+    background-image: linear-gradient(transparent, black);
+    bottom: 0;
+    margin: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.no-scroll{
+    overflow: hidden;
+}
+
+#modal-logout{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, .9) ;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+
+    
+}
+
+#modal-logout button{
+    margin: 2em;
+}
+
+#modal-logout button:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+
+#modal-logout div{
+    border: solid 3px #E0FBFC;
+    color: white;
+    text-align: center;
+    background-color: #182825;
+    margin-bottom: 35vh;
+    padding: 1em;
+}
+
+#modal-logout>img {
+    width: 6em;
+    margin-right: 6em;
+}
+
+#menu {
+    display: none;
+    position: fixed;
+    top: 5.5em;
+    left: 0.2em;
+}
+
+#menu:hover{
+    cursor: pointer;
+}
+
+#lateral_bar {
+        display: none;
+        background-color: #182825;
+        align-items: center;
+        position: fixed;
+        top: 10em;
+        left: 0;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 40vh;
+        border-radius: 0 1em 1em 0;
+        border: solid .1em #E0FBFC;
+        z-index: 2;
+        width: 30vh;
+}
+
+#lateral_bar .searchbar{
+    font-size: small;
+}
+
+#lateral_bar a{
+    text-decoration: none;  
+    color: inherit;  
+}
+
+#lateral_bar a:visited{
+    color:inherit;
+}
+
+#lateral_bar span:hover{
+    cursor: pointer;
+}
+
+
+@media(max-width: 800px){
+
+    #navbar{
+        display: none;
+        }
+
+    #menu{
+        display: block;
+    }
+
+    #lateral_bar{
+        display: flex;
+        width: 50vw;
+    }
+
+    body {
+        font-size: 1em;
+        }
+
+    #header{
+        height: 30vh;
+    }
+
+    #mainName{
+        font-size: 1.5em;
+    }
+    
+    .overlay{
+        justify-content: center;
+    }
+    
+    .footer{
+        gap: 1.5em;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer div{
+        max-width: 99%;
+    }
+
+    #container{
+        width: 100%;
+        font-size: .7em;
+    }
+
+    #container div{
+        height: 30vh;
+    }
+
+    #login_flex h1{
+        text-align: center;
+    }
+}

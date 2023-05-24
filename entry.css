@@ -1,0 +1,25 @@
+#message {
+    display: flex;
+    background-color: #182825 ;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    border: solid #E0FBFC 3px;
+    color: white;
+    flex-direction: column;
+  }
+  
+  .valid {
+    color: green;
+  }
+  
+
+  .invalid {
+    color: red;
+  }
+
+  #error{
+    color: red;
+    border: red solid 3px;
+    padding: 10px;
+  }

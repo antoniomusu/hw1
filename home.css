@@ -1,0 +1,29 @@
+.content a{
+    text-decoration: none;
+}
+
+.content a:visited{
+    color: inherit;
+}
+
+.content a:hover{
+    color: peachpuff;
+}
+
+.content p{
+    width: 20vw;
+    padding-top: 1em;
+    font-size: medium;
+}
+
+.time{
+    font-size: smaller;
+    text-align: end;
+    padding-top: .5em;
+}
+
+@media(max-width: 800px){
+.content p{
+    width: 60vw;
+}
+}
