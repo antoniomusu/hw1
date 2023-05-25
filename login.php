@@ -16,21 +16,25 @@
         //connetto al database
         $conn = mysqli_connect("localhost", "root", "", "homework" ) or die("Errore: ".mysqli_connect_error());
         $username = $_POST["username"];
-        $password = $_POST["password"];
+        $password = password_hash($_POST["password"], PASSWORD_BCRYPT);
         //Preparo stringa con query
-        $query = "SELECT * FROM user where username = ? AND password = PASSWORD(?)";
+        $query = "SELECT * FROM user where username = ?";
         //Chiedo risposta al database e faccio l'escape dei dati
         $stmt = $conn->prepare($query);
-        $stmt->execute([$username, $password]) or die("Errore: ".mysqli_error($conn));
+        $stmt->execute([$username]) or die("Errore: ".mysqli_error($conn));
         $res = $stmt->get_result();
         mysqli_close($conn);
         //Verifico la correttezza delle credenziali
-        if(mysqli_num_rows($res) > 0){
-            //Imposto la variabile di sessione
-            $_SESSION["username"] = $_POST["username"];
-            //Rimando alla home
-            header("Location: home.php");
-            exit;
+        if (mysqli_num_rows($res) > 0) {
+            // Ritorna una sola riga, il che ci basta perché l'utente autenticato è solo uno
+            $user = mysqli_fetch_assoc($res);
+            if (password_verify($_POST['password'], $user['password'])){
+                //Imposto la variabile di sessione
+                $_SESSION["username"] = $_POST["username"];
+                //Rimando alla home
+                header("Location: home.php");
+                exit;
+            }
         }
         //Segnalo l'errore
         $error = true;

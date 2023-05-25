@@ -22,6 +22,7 @@
         $number = preg_match('@[0-9]@', $password);
         if(!$uppercase||!$lowercase||!$number ||strlen($password) < 8)
             $error[] = "Password non conforme";
+        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
  
         //#EMAIL
         if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)){
@@ -41,7 +42,7 @@
             }
         }
         if(count($error) == 0){
-            $sql = "INSERT INTO user VALUES(?, PASSWORD(?), ?, ?, default, default)";
+            $sql = "INSERT INTO user VALUES(?, ?, ?, ?, default, default)";
             $stmt ->prepare($sql);
             $stmt->execute([ $username, $password, $_POST["dataNascita"], $email]) or die("Errore ". $conn->error);
             $entryFlag= true;
