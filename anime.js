@@ -11,12 +11,12 @@ function saveAnime(event)
 }
 
 function addComment(event){
-  event.preventDefault();
   formData = new FormData(form);
   formData.append("animeID", animeID);
   formData.append("title", animeTitle);
   fetch("addComment.php", {method:'POST', body: formData});
   restoreComments();
+  event.preventDefault();
 }
 
 function onCommentJson(json){
