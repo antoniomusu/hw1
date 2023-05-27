@@ -18,8 +18,7 @@
             $stmt = $conn->prepare($delete);
             $stmt->execute([$_SESSION["username"], $_GET["animeID"]]) or die("Errore: ".mysqli_error($conn));
         }else{
-            //Se c'è elimino
-            $add = "INSERT INTO SAVEDANIME VALUES(?,?,?,?)";
+            $add = "INSERT INTO SAVEDANIME(username, animeID, image, title) VALUES(?,?,?,?)";
             //Chiedo risposta al database e faccio l'escape dei dati
             $stmt = $conn->prepare($add);
             $stmt->execute([$_SESSION["username"], $_GET["animeID"], $_GET["image"],$_GET["title"]]) or die("Errore: ".mysqli_error($conn));

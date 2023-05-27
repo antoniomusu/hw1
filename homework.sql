@@ -11,22 +11,26 @@ create table USER(
 );
 
 create table SAVEDANIME(
+	id_saved int AUTO_INCREMENT,
 	username varchar(16),
     animeID int,
     image text,
     title varchar(255),
-    primary key(username, animeID),
+    primary key(id_saved),
+    unique(username, animeID),
     foreign key(username) references USER(username)
 );
 
 create table COMMENTS(
+	id_comment int auto_increment,
 	user varchar(16),
     animeID int,
     comment text NOT NULL,
     date datetime default now(),
     title varchar(255),
-    primary key(user, animeID, date),
-   foreign key(user) references USER(username)
+    primary key(id_comment),
+    unique(user, animeID, date),
+    foreign key(user) references USER(username)
 );
 
 create table EVENT(
