@@ -6,8 +6,6 @@
     }
     if(isset($_GET['animeID'])){
         //Curl per dati dell'anime
-        $dati = array("id" => $_GET['animeID']);
-        $dati = http_build_query($dati);
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL,"https://api.jikan.moe/v4/anime/".$_GET["animeID"]);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
